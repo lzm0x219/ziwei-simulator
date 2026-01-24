@@ -7,7 +7,7 @@
       "dependencies": {
         "@ant-design/icons": "6.1.0",
         "@tauri-apps/api": "2.9.1",
-        "@zumer/snapdom": "2.0.1",
+        "@zumer/snapdom": "2.0.2",
         "antd": "6.2.1",
         "antd-style": "4.1.0",
         "react": "19.2.3",
@@ -498,7 +498,7 @@
 
     "@typescript/native-preview-win32-x64": ["@typescript/native-preview-win32-x64@7.0.0-dev.20260123.3", "", { "os": "win32", "cpu": "x64" }, "sha512-H7/PE9vznvc4mQz6Hiuw4tTQq9J0b5QWebYoGXoxOqFF/JI3m920yv8+nRI144cVoBYdonOwanexFfNq4KdwCQ=="],
 
-    "@zumer/snapdom": ["@zumer/snapdom@2.0.1", "", {}, "sha512-78/qbYl2FTv4H6qaXcNfAujfIOSzdvs83NW63VbyC9QA3sqNPfPvhn4xYMO6Gy11hXwJUEhd0z65yKiNzDwy9w=="],
+    "@zumer/snapdom": ["@zumer/snapdom@2.0.2", "", {}, "sha512-W6quT4lMcPu8Q9O/Q6witSfc6/+xuY8C8yDoHug/+o7zYKCNE/e0I3//XsWDkyq9C0mDE0TAWF/8bwCR7x3gHQ=="],
 
     "accepts": ["accepts@1.3.8", "", { "dependencies": { "mime-types": "~2.1.34", "negotiator": "0.6.3" } }, "sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw=="],
 
