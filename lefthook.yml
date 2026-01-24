@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: lint
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: bun oxlint {staged_files}
+      stage_fixed: true
+
+    - name: format
+      glob: "*"
+      run: bun oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+
+    - name: type check
+      run: bun oxlint --type-aware {staged_files}
+      stage_fixed: true
