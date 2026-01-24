@@ -174,129 +174,130 @@ export default function SimulatorView({ side = 660 }: SimulatorProsp) {
 
   return (
     <div className={styles.container}>
-      <div id="simulator">
-        <svg width={side} height={side} viewBox="0 0 660 660" shapeRendering="crispEdges">
-          <g>
-            <rect width={660} height={660} fill={boardFill} />
-            <rect
-              x={boardX}
-              y={boardY}
-              width={boardSide}
-              height={boardSide}
-              fill={boardFill}
-              stroke={boardStroke}
-              strokeWidth={boardStrokeWidth}
-            />
+      <svg
+        id="simulator"
+        width={side}
+        height={side}
+        viewBox="0 0 660 660"
+        shapeRendering="crispEdges"
+      >
+        <g>
+          <rect width={660} height={660} fill={boardFill} />
+          <rect
+            x={boardX}
+            y={boardY}
+            width={boardSide}
+            height={boardSide}
+            fill={boardFill}
+            stroke={boardStroke}
+            strokeWidth={boardStrokeWidth}
+          />
 
-            {PLACE_BRANCH.map((branch, index) => {
-              const currentTransformations = stars[index].reduce<Transformation[]>(
-                (result, star) => {
-                  const starTransformation = calculateStarTransformation(
-                    stems[oppositeIndex(index)],
-                    star,
-                  );
-                  if (starTransformation) {
-                    result.push(starTransformation);
+          {PLACE_BRANCH.map((branch, index) => {
+            const currentTransformations = stars[index].reduce<Transformation[]>((result, star) => {
+              const starTransformation = calculateStarTransformation(
+                stems[oppositeIndex(index)],
+                star,
+              );
+              if (starTransformation) {
+                result.push(starTransformation);
+              }
+              return result;
+            }, []);
+
+            const selfTransformation = currentTransformations.filter((t) =>
+              render.showSelfTransformation.includes(t),
+            );
+            const hasSelfTransformation = selfTransformation.length > 0;
+
+            return (
+              <Palace
+                key={branch}
+                width={palaceSide}
+                height={palaceSide}
+                x={palaceCoordinates[index].x}
+                y={palaceCoordinates[index].y}
+                fill={getPalaceFill(index)}
+                onClick={() => {
+                  if (runtime.flyingPalaceIndex === index) {
+                    runtime.setFlyingTransformations([]);
+                    runtime.setFlyingPalaceIndex(undefined);
+                  } else {
+                    if (stems[index]) {
+                      runtime.setFlyingTransformations(STEM_TRANSFORMATIONS[stems[index]]);
+                      runtime.setFlyingPalaceIndex(index);
+                    }
                   }
-                  return result;
-                },
-                [],
-              );
+                }}
+              >
+                {/* 来因 */}
+                {render.showLaiYin && isLaiYin(branch, stemName) && (
+                  <LaiYin x={laiYinFlagX} y={laiYinFlagY} type="D" />
+                )}
+                {/* 干支 */}
+                <PalaceStemBranch stem={stems[index]} branch={branch} />
+                {/* 宫职 */}
+                <PalaceName name={palaces[index]} />
+                {/* 大限宫职 */}
+                <PalaceDecadeName name={decadePalaces[index]} />
+                {/* 大限间隔 */}
+                <PalaceDecade name={decadeRanges?.[index]?.join("~")} />
 
-              const selfTransformation = currentTransformations.filter((t) =>
-                render.showSelfTransformation.includes(t),
-              );
-              const hasSelfTransformation = selfTransformation.length > 0;
+                {/* 星辰 */}
+                <PalaceStar index={index} stem={stems[index]} stars={stars[index]} />
 
-              return (
-                <Palace
-                  key={branch}
-                  width={palaceSide}
-                  height={palaceSide}
-                  x={palaceCoordinates[index].x}
-                  y={palaceCoordinates[index].y}
-                  fill={getPalaceFill(index)}
-                  onClick={() => {
-                    if (runtime.flyingPalaceIndex === index) {
-                      runtime.setFlyingTransformations([]);
-                      runtime.setFlyingPalaceIndex(undefined);
-                    } else {
-                      if (stems[index]) {
-                        runtime.setFlyingTransformations(STEM_TRANSFORMATIONS[stems[index]]);
-                        runtime.setFlyingPalaceIndex(index);
-                      }
-                    }
-                  }}
+                <Activity
+                  mode={
+                    yearlys.length &&
+                    yearlyPalaces.length === 0 &&
+                    render.showYearly &&
+                    render.showPalaceName
+                      ? "visible"
+                      : "hidden"
+                  }
                 >
-                  {/* 来因 */}
-                  {render.showLaiYin && isLaiYin(branch, stemName) && (
-                    <LaiYin x={laiYinFlagX} y={laiYinFlagY} type="D" />
-                  )}
-                  {/* 干支 */}
-                  <PalaceStemBranch stem={stems[index]} branch={branch} />
-                  {/* 宫职 */}
-                  <PalaceName name={palaces[index]} />
-                  {/* 大限宫职 */}
-                  <PalaceDecadeName name={decadePalaces[index]} />
-                  {/* 大限间隔 */}
-                  <PalaceDecade name={decadeRanges?.[index]?.join("~")} />
+                  <text
+                    x={palaceSide / 2}
+                    y={verticalRectHeight * 2 - yearlyFontSize / 2}
+                    fontSize={yearlyFontSize}
+                    textAnchor="middle"
+                  >
+                    {yearlys[index]}
+                  </text>
+                </Activity>
+                <Activity
+                  mode={
+                    yearlyPalaces.length > 0 && render.showYearly && render.showPalaceName
+                      ? "visible"
+                      : "hidden"
+                  }
+                >
+                  <text
+                    x={palaceSide / 2}
+                    y={verticalRectHeight * 2 - yearlyFontSize / 2}
+                    fontSize={yearlyFontSize}
+                    textAnchor="middle"
+                  >
+                    {yearlyPalaces[index]}
+                  </text>
+                </Activity>
 
-                  {/* 星辰 */}
-                  <PalaceStar index={index} stem={stems[index]} stars={stars[index]} />
-
+                {hasSelfTransformation && (
                   <Activity
                     mode={
-                      yearlys.length &&
-                      yearlyPalaces.length === 0 &&
-                      render.showYearly &&
-                      render.showPalaceName
+                      selfTransformation.every((t) => render.showSelfTransformation.includes(t))
                         ? "visible"
                         : "hidden"
                     }
                   >
-                    <text
-                      x={palaceSide / 2}
-                      y={verticalRectHeight * 2 - yearlyFontSize / 2}
-                      fontSize={yearlyFontSize}
-                      textAnchor="middle"
-                    >
-                      {yearlys[index]}
-                    </text>
+                    <SlefCentripetal index={index} name={selfTransformation.join("")} />
                   </Activity>
-                  <Activity
-                    mode={
-                      yearlyPalaces.length > 0 && render.showYearly && render.showPalaceName
-                        ? "visible"
-                        : "hidden"
-                    }
-                  >
-                    <text
-                      x={palaceSide / 2}
-                      y={verticalRectHeight * 2 - yearlyFontSize / 2}
-                      fontSize={yearlyFontSize}
-                      textAnchor="middle"
-                    >
-                      {yearlyPalaces[index]}
-                    </text>
-                  </Activity>
-
-                  {hasSelfTransformation && (
-                    <Activity
-                      mode={
-                        selfTransformation.every((t) => render.showSelfTransformation.includes(t))
-                          ? "visible"
-                          : "hidden"
-                      }
-                    >
-                      <SlefCentripetal index={index} name={selfTransformation.join("")} />
-                    </Activity>
-                  )}
-                </Palace>
-              );
-            })}
-          </g>
-        </svg>
-      </div>
+                )}
+              </Palace>
+            );
+          })}
+        </g>
+      </svg>
     </div>
   );
 }
