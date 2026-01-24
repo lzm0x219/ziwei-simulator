@@ -42,7 +42,7 @@
     "@types/react-dom": "19.2.3",
     "@typescript/native-preview": "7.0.0-dev.20260124.1",
     "babel-plugin-react-compiler": "1.0.0",
-    "happy-dom": "20.3.4",
+    "happy-dom": "20.3.7",
     "lefthook": "2.0.15",
     "oxfmt": "0.26.0",
     "oxlint": "1.41.0",
