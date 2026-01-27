@@ -8,14 +8,8 @@ import { RuntimeContainer } from "./hooks/useRuntime";
 import { SimulatorContainer } from "./hooks/useSimulator";
 
 const GlobalStyle = createGlobalStyle`
-  /* @font-face {
-    font-family: 'Source Han Serif VF';
-    src: url('/fonts/Source Han Serif CN VF.tff.woff2') format('woff2');
-    font-display: block;
-  } */
-
   @font-face {
-    font-family: 'Source Han Serif VF';
+    font-family: 'Source Han Serif CN';
     src: url('/fonts/SourceHanSerifCN-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: light;
@@ -23,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'Source Han Serif VF';
+    font-family: 'Source Han Serif CN';
     src: url('/fonts/SourceHanSerifCN-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -31,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'Source Han Serif VF';
+    font-family: 'Source Han Serif CN';
     src: url('/fonts/SourceHanSerifCN-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: medium;
@@ -40,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
 
 
   @font-face {
-    font-family: 'Source Han Serif VF';
+    font-family: 'Source Han Serif CN';
     src: url('/fonts/SourceHanSerifCN-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: SemiBold;
@@ -48,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'Source Han Serif VF';
+    font-family: 'Source Han Serif CN';
     src: url('/fonts/SourceHanSerifCN-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: Bold;
@@ -84,7 +78,7 @@ export default function App() {
             theme={{
               token: {
                 colorPrimary: "#000",
-                fontFamily: "'Source Han Serif VF', serif",
+                fontFamily: "'Source Han Serif CN', serif",
               },
             }}
           >

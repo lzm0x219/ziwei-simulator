@@ -459,28 +459,28 @@ export default function SimulatorSetting() {
             localFonts: [
               {
                 src: "/fonts/SourceHanSerifCN-Light.woff2",
-                family: "Source Han Serif VF",
+                family: "Source Han Serif CN",
                 weight: 300,
               },
               {
                 src: "/fonts/SourceHanSerifCN-Regular.woff2",
-                family: "Source Han Serif VF",
+                family: "Source Han Serif CN",
                 weight: 400,
                 style: "normal",
               },
               {
                 src: "/fonts/SourceHanSerifCN-Medium.woff2",
-                family: "Source Han Serif VF",
+                family: "Source Han Serif CN",
                 weight: 500,
               },
               {
                 src: "/fonts/SourceHanSerifCN-SemiBold.woff2",
-                family: "Source Han Serif VF",
+                family: "Source Han Serif CN",
                 weight: 600,
               },
               {
                 src: "/fonts/SourceHanSerifCN-Bold.woff2",
-                family: "Source Han Serif VF",
+                family: "Source Han Serif CN",
                 weight: 700,
               },
             ],
