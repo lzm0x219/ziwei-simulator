@@ -13,8 +13,8 @@
   "app": {
     "windows": [
       {
-        "width": 1270,
-        "minWidth": 1270,
+        "width": 1300,
+        "minWidth": 1300,
         "height": 800,
         "minHeight": 800,
         "backgroundColor": "#f2f2f2",

@@ -40,7 +40,7 @@ const useStyles = createStyles(({ token, css }) => ({
     justify-content: center;
     align-items: center;
     padding: ${token.paddingLG}px;
-    width: 55%;
+    width: 56%;
     height: 100dvh;
     background-color: ${token.colorBgLayout};
   `,
@@ -178,11 +178,11 @@ export default function SimulatorView({ side = 660 }: SimulatorProsp) {
         id="simulator"
         width={side}
         height={side}
-        viewBox="0 0 660 660"
+        viewBox={`0 0 ${side} ${side}`}
         shapeRendering="crispEdges"
       >
         <g>
-          <rect width={660} height={660} fill={boardFill} />
+          <rect width={side} height={side} fill={boardFill} />
           <rect
             x={boardX}
             y={boardY}
