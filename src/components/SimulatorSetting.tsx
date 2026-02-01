@@ -125,12 +125,14 @@ export default function SimulatorSetting() {
                 value={runtime.stem}
                 onChange={(stem) => {
                   runtime.setStem(stem);
-                  setBranchOptions((pre) =>
-                    pre.map((item, index) => ({
-                      ...item,
-                      disabled: index % 2 !== stem % 2,
-                    })),
-                  );
+                  const vaildBranchOptions = branchOptions.map((item, index) => ({
+                    ...item,
+                    disabled: index % 2 !== stem % 2,
+                  }));
+                  if (isValidNumber(runtime.branch)) {
+                    runtime.setBranch(vaildBranchOptions.findIndex((item) => !item.disabled));
+                  }
+                  setBranchOptions(vaildBranchOptions);
                 }}
               />
             </ConfigProvider>
