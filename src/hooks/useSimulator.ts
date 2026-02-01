@@ -153,7 +153,7 @@ export default function useSimulator() {
       ziweiColor: colorPalette.p1,
       ziweiPalaceFill: "transparent",
       minorStarColor: colorPalette.p3,
-      positionStarColor: colorPalette.g3,
+      positionStarColor: colorPalette.g4,
       flyingTransformationFill: defualtFlyingTransformationFill,
       flyingTransformationColor: colorPalette.w1,
       yearlyFontSize: 10,
