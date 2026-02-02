@@ -27,7 +27,7 @@ export default function PalaceStar({ index, stars, stem }: PalaceStarProps) {
       }
     }
     return map;
-  }, [JSON.stringify(stars)]);
+  }, [stars, stem]);
 
   return (
     <g>
