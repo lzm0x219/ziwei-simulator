@@ -31,7 +31,7 @@ export function useCentripetalPostion() {
       {
         points: [
           [palaceSide * 3, palaceSide * 1.5],
-          [palaceSide + palaceStrokeWidth * 2, palaceSide * 0.5 - palaceStrokeWidth],
+          [palaceSide + palaceStrokeWidth * 2, palaceSide * 0.5 + palaceStrokeWidth],
         ],
         text: {
           x: palaceSide + palaceStrokeWidth * 2 + fontSize * 1.5,
@@ -100,7 +100,7 @@ export function useCentripetalPostion() {
       // 8
       {
         points: [
-          [-palaceSide * 2 + palaceStrokeWidth, -palaceSide * 0.5 - palaceStrokeWidth * 1.5],
+          [-palaceSide * 2, -palaceSide * 0.5],
           [-palaceStrokeWidth * 2, palaceSide * 0.5 - palaceStrokeWidth],
         ],
         text: {
