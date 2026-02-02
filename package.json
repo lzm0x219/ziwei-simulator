@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@rsbuild/core": "2.0.0-beta.0",
-    "@rsbuild/plugin-react": "1.4.4",
+    "@rsbuild/plugin-react": "1.4.5",
     "@rsdoctor/rspack-plugin": "1.5.1",
     "@rstest/core": "0.8.1",
     "@tauri-apps/cli": "2.9.6",
