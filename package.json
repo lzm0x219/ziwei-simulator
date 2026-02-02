@@ -22,7 +22,7 @@
     "@ant-design/icons": "6.1.0",
     "@tauri-apps/api": "2.9.1",
     "@zumer/snapdom": "2.0.2",
-    "antd": "6.2.2",
+    "antd": "6.2.3",
     "antd-style": "4.1.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
