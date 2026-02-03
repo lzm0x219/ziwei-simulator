@@ -19,7 +19,7 @@
         "@rsbuild/core": "2.0.0-beta.1",
         "@rsbuild/plugin-react": "1.4.5",
         "@rsdoctor/rspack-plugin": "1.5.1",
-        "@rstest/core": "0.8.1",
+        "@rstest/core": "0.8.2",
         "@tauri-apps/cli": "2.10.0",
         "@testing-library/dom": "10.4.1",
         "@testing-library/jest-dom": "6.9.1",
@@ -383,7 +383,7 @@
 
     "@rspack/plugin-react-refresh": ["@rspack/plugin-react-refresh@1.6.0", "", { "dependencies": { "error-stack-parser": "^2.1.4", "html-entities": "^2.6.0" }, "peerDependencies": { "react-refresh": ">=0.10.0 <1.0.0", "webpack-hot-middleware": "2.x" }, "optionalPeers": ["webpack-hot-middleware"] }, "sha512-OO53gkrte/Ty4iRXxxM6lkwPGxsSsupFKdrPFnjwFIYrPvFLjeolAl5cTx+FzO5hYygJiGnw7iEKTmD+ptxqDA=="],
 
-    "@rstest/core": ["@rstest/core@0.8.1", "", { "dependencies": { "@rsbuild/core": "1.7.2", "@types/chai": "^5.2.3", "tinypool": "^1.1.1" }, "peerDependencies": { "happy-dom": "*", "jsdom": "*" }, "optionalPeers": ["happy-dom", "jsdom"], "bin": { "rstest": "bin/rstest.js" } }, "sha512-7d/2fm2V91pVx/rRtZ2gl6Zh4hVMivtDl4RgHFhBOrxi//UwhKISeF5gS/CSwpCgfOf10TzJRXqdI17ueUBNMQ=="],
+    "@rstest/core": ["@rstest/core@0.8.2", "", { "dependencies": { "@rsbuild/core": "1.7.2", "@types/chai": "^5.2.3", "tinypool": "^1.1.1" }, "peerDependencies": { "happy-dom": "*", "jsdom": "*" }, "optionalPeers": ["happy-dom", "jsdom"], "bin": { "rstest": "bin/rstest.js" } }, "sha512-l//JT7cfrSk3LMxwqW9wuCEECpVFS2Cux1QN3BQl6mVLNzZMzZPtSS/pv2NNZKFDHfmdmq59fe3g8XP0ekDeOw=="],
 
     "@socket.io/component-emitter": ["@socket.io/component-emitter@3.1.2", "", {}, "sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA=="],
 
